@@ -28,10 +28,12 @@ values = result.get("values", [])
 st.header("Ecole Nour Alfitra", divider="rainbow")
 st.subheader("Liste des élèves")
 
+options = st.multiselect(
+    "Classes: ", ["PS", "MS", "GS", "CP", "CE1", "CE2", "CM1", "CM2", "CE6"],
+    ["CP", "CE1", "CE2", "CM1", "CM2", "CE6"],
+)
+
 df= pd.DataFrame(values)
 df.columns = df.iloc[0]
 df = df[1:]
-st.dataframe(df)
-
-
-
+st.dataframe(df[df['Niveau'].isin(options)])
