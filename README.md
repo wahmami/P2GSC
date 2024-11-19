@@ -1,2 +1,3 @@
-# P2GSC
-CRUD with google sheets /python
+This is a project about managing school using crud system:
+  coding with python
+  database with google sheets
